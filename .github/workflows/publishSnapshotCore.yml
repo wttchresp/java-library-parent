@@ -1,4 +1,4 @@
-name: Publish Snopshot CI [Core] 
+name: Publish Snapshot CI [Core]
 
 on:
   push:
@@ -19,5 +19,5 @@ jobs:
           java-version: 11
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-      - name: Publish Snopshot
-        run: ./gradlew :core:publish -DossrhUsername=${{ OSSRH_USERNAME }} -DossrhPassword=${{ OSSRH_PASSWORD }}
+      - name: Publish Snapshot
+        run: ./gradlew :core:publish -DossrhUsername=${{ secrets.OSSRH_USERNAME }} -DossrhPassword=${{ secrets.OSSRH_PASSWORD }}
