@@ -21,9 +21,6 @@ object Utils {
         }
         val ossrhUsername = properties.getProperty(ossrhUsernameKey)
         val ossrhPassword = properties.getProperty(ossrhPasswordKey)
-        if (ossrhUsername == null || ossrhPassword == null) {
-            throw RuntimeException("ossrh账号或密码加载失败!")
-        }
         consumer.accept(ossrhUsername, ossrhPassword)
     }
 }

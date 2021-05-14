@@ -20,4 +20,4 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Publish Snopshot
-        run: ./gradlew :core:publish -DossrhUsername={{OSSRH_USERNAME}} -DossrhPassword={{OSSRH_PASSWORD}}
+        run: ./gradlew :core:publish -DossrhUsername=${{ OSSRH_USERNAME }} -DossrhPassword=${{ OSSRH_PASSWORD }}
