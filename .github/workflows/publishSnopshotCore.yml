@@ -1,0 +1,23 @@
+name: Publish Snopshot CI [Core] 
+
+on:
+  push:
+    branches: 
+      - develop
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Publish Snopshot
+        run: ./gradlew :core:publish -DossrhUsername={{OSSRH_USERNAME}} -DossrhPassword={{OSSRH_PASSWORD}}
