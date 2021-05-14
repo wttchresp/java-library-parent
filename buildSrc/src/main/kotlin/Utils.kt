@@ -21,6 +21,6 @@ object Utils {
         }
         val ossrhUsername = properties.getProperty(ossrhUsernameKey)
         val ossrhPassword = properties.getProperty(ossrhPasswordKey)
-        consumer.accept(ossrhUsername, ossrhPassword)
+        consumer.accept(ossrhUsername ?: "", ossrhPassword ?: "")
     }
 }
