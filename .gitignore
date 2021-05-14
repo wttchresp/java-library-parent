@@ -2,3 +2,4 @@
 .idea/
 build
 *.gpg
+local.properties

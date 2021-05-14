@@ -58,21 +58,26 @@ publishing {
             val releasesRepoUrl =
                 uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
             val snapshotsRepoUrl = uri("https://oss.sonatype.org/content/repositories/snapshots/")
-            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
+            url = if (isReleaseVersion()) releasesRepoUrl else snapshotsRepoUrl
             credentials {
-                val ossrhUsername: String by project
-                val ossrhPassword: String by project
-                username = ossrhUsername
-                password = ossrhPassword
+                Utils.loadOssrhConfig(rootProject) { u, p ->
+                    username = u
+                    password = p
+                }
             }
         }
     }
 }
 
 signing {
+    // useInMemoryPgpKeys("", "")
     sign(publishing.publications["mavenJava"])
 }
 
 tasks.withType<Sign>().configureEach {
-    onlyIf { !version.toString().endsWith("SNAPSHOT") }
+    onlyIf { isReleaseVersion() }
+}
+
+fun isReleaseVersion(): Boolean {
+    return !version.toString().endsWith("SNAPSHOT")
 }
