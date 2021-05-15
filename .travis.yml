@@ -6,4 +6,5 @@ dist: trusty
 jdk: oraclejdk11
 
 script:
+  - chmod +x ./gradlew
   - ./gradlew build --scan -s
