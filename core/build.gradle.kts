@@ -1,3 +1,5 @@
+import exts.isReleaseVersion
+
 plugins {
     `java-library`
     `maven-publish`
@@ -40,5 +42,5 @@ signing {
 }
 
 tasks.withType<Sign>().configureEach {
-    onlyIf { isReleaseVersion() }
+    onlyIf { project.isReleaseVersion() }
 }
