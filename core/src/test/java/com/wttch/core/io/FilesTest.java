@@ -1,6 +1,5 @@
 package com.wttch.core.io;
 
-import com.wttch.io.Files;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.Assert;

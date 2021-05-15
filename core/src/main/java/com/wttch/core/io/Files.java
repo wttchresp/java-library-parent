@@ -1,4 +1,4 @@
-package com.wttch.io;
+package com.wttch.core.io;
 
 import com.wttch.core.common.Strings;
 import java.net.URL;

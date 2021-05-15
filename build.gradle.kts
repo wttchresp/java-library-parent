@@ -8,10 +8,14 @@ version = "1.0.0-release"
 
 repositories {
     mavenCentral()
+    maven {
+        setUrl("https://oss.sonatype.org/content/repositories/snapshots/")
+    }
 }
 
 dependencies {
     testImplementation("junit", "junit", "4.12")
+    implementation("com.wttch:core:0.1-SNAPSHOT")
 }
 
 subprojects {

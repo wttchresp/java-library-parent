@@ -1,4 +1,4 @@
-package com.wttch.io;
+package com.wttch.core.io;
 
 import java.io.IOException;
 

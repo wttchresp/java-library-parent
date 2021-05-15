@@ -1,7 +1,7 @@
 package com.wttch.core.common;
 
-import com.wttch.io.Files;
-import com.wttch.io.Jars;
+import com.wttch.core.io.Files;
+import com.wttch.core.io.Jars;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
